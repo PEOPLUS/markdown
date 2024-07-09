@@ -8,7 +8,7 @@ import 'delimiter_syntax.dart';
 class BoldSyntax extends DelimiterSyntax {
   BoldSyntax()
     : super(
-        '*+',
+        r'\*+',
         requiresDelimiterRun: true,
         allowIntraWord: true,
         startCharacter: $tilde,
