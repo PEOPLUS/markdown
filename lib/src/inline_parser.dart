@@ -18,7 +18,9 @@ import 'inline_syntaxes/inline_syntax.dart';
 import 'inline_syntaxes/line_break_syntax.dart';
 import 'inline_syntaxes/link_syntax.dart';
 import 'inline_syntaxes/soft_line_break_syntax.dart';
+import 'inline_syntaxes/strikethrough_syntax.dart';
 import 'inline_syntaxes/text_syntax.dart';
+import 'inline_syntaxes/underline_syntax.dart';
 
 /// Maintains the internal state needed to parse inline span elements in
 /// Markdown.
@@ -32,6 +34,8 @@ class InlineParser {
     EmphasisSyntax.asterisk(),
     // Parse "__strong__" and "_emphasis_" tags.
     EmphasisSyntax.underscore(),
+    StrikethroughSyntax(),
+    UnderlineSyntax(),
     CodeSyntax(),
     SoftLineBreakSyntax(),
     // We will add the LinkSyntax once we know about the specific link resolver.
