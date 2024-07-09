@@ -6,6 +6,7 @@ import 'ast.dart';
 import 'charcode.dart';
 import 'document.dart';
 import 'inline_syntaxes/autolink_syntax.dart';
+import 'inline_syntaxes/bold_syntax.dart';
 import 'inline_syntaxes/code_syntax.dart';
 import 'inline_syntaxes/decode_html_syntax.dart';
 import 'inline_syntaxes/delimiter_syntax.dart';
@@ -20,6 +21,7 @@ import 'inline_syntaxes/link_syntax.dart';
 import 'inline_syntaxes/soft_line_break_syntax.dart';
 import 'inline_syntaxes/strikethrough_syntax.dart';
 import 'inline_syntaxes/text_syntax.dart';
+import 'inline_syntaxes/underline_syntax.dart';
 
 /// Maintains the internal state needed to parse inline span elements in
 /// Markdown.
@@ -29,10 +31,9 @@ class InlineParser {
     EmailAutolinkSyntax(),
     AutolinkSyntax(),
     LineBreakSyntax(),
-    // Parse "**strong**" and "*emphasis*" tags.
-    EmphasisSyntax.asterisk(),
-    // Parse "__strong__" and "_emphasis_" tags.
-    EmphasisSyntax.underscore(),
+    EmphasisSyntax(),
+    BoldSyntax(),
+    UnderlineSyntax(),
     StrikethroughSyntax(),
     CodeSyntax(),
     SoftLineBreakSyntax(),

@@ -6,28 +6,36 @@ import '../charcode.dart';
 import 'delimiter_syntax.dart';
 
 class EmphasisSyntax extends DelimiterSyntax {
-  /// Parses `__strong__` and `_emphasis_`.
-  EmphasisSyntax.underscore()
-      : super(
-          '_+',
-          requiresDelimiterRun: true,
-          tags: _tags,
-          startCharacter: $underscore,
-        );
+  EmphasisSyntax()
+    : super(
+        '_+',
+        requiresDelimiterRun: true,
+        allowIntraWord: true,
+        startCharacter: $tilde,
+        tags: [ DelimiterTag('em', 1) ],
+      );
+  // /// Parses `__strong__` and `_emphasis_`.
+  // EmphasisSyntax.underscore()
+  //     : super(
+  //         '_+',
+  //         requiresDelimiterRun: true,
+  //         tags: _tags,
+  //         startCharacter: $underscore,
+  //       );
 
-  /// Parses `**strong**` and `*emphasis*`.
-  EmphasisSyntax.asterisk()
-      : super(
-          r'\*+',
-          requiresDelimiterRun: true,
-          allowIntraWord: true,
-          tags: _tags,
-          startCharacter: $asterisk,
-        );
+  // /// Parses `**strong**` and `*emphasis*`.
+  // EmphasisSyntax.asterisk()
+  //     : super(
+  //         r'\*+',
+  //         requiresDelimiterRun: true,
+  //         allowIntraWord: true,
+  //         tags: _tags,
+  //         startCharacter: $asterisk,
+  //       );
 
-  static final _tags = [
-    DelimiterTag('em', 1),
-    DelimiterTag('strong', 2),
-    DelimiterTag('u', 3),
-  ];
+  // static final _tags = [
+  //   DelimiterTag('em', 1),
+  //   DelimiterTag('strong', 2),
+  //   DelimiterTag('u', 3),
+  // ];
 }
