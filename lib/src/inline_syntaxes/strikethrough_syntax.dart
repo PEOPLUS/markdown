@@ -9,10 +9,10 @@ import 'delimiter_syntax.dart';
 class StrikethroughSyntax extends DelimiterSyntax {
   StrikethroughSyntax()
       : super(
-          '~+',
+          '~~+',
           requiresDelimiterRun: true,
           allowIntraWord: true,
           startCharacter: $tilde,
-          tags: [DelimiterTag('del', 1), DelimiterTag('del', 2)],
+          tags: [ DelimiterTag('s', 1) ],
         );
 }
