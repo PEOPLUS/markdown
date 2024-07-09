@@ -25,5 +25,10 @@ class EmphasisSyntax extends DelimiterSyntax {
           startCharacter: $asterisk,
         );
 
-  static final _tags = [DelimiterTag('em', 1), DelimiterTag('strong', 2)];
+  static final _tags = [
+    DelimiterTag('em', 1),
+    DelimiterTag('strong', 2),
+    DelimiterTag('strike', 2),
+    DelimiterTag('underline', 2),
+  ];
 }
