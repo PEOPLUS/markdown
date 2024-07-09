@@ -5,7 +5,7 @@ import 'delimiter_syntax.dart';
 class UnderlineSyntax extends DelimiterSyntax {
   UnderlineSyntax()
       : super(
-          '__+',
+          'ins+',
           requiresDelimiterRun: true,
           allowIntraWord: true,
           startCharacter: $tilde,
